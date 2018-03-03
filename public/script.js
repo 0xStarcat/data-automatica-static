@@ -7,6 +7,7 @@ let texts = [
 	{msg: "Great!!", delay: 2500, question: false},
 	{msg: "We're a collective that develops and designs beautiful web apps + software with social, civic, and community value.", delay: 6500, question: false},
 	{msg: "We especially love to support grassroots organizations, researchers, and activists!", delay: 4000, question: true},
+	{msg: "Thanks for asking!", delay: 3000, question: false},
 	{msg: "Media platforms, data visualizations & scrapers, software products, you name it!", delay: 5000, question: true},
 	{msg: "You already have my number, silly! 😂", delay: 2000, question: false},
 	{msg: "You can always send us an email at <a href='mailto:mail@automatix.xyz?Subject=Data Automatica' target='_top'>mail@automatix.xyz</a> though!", delay: 3000, question: false},
@@ -17,7 +18,7 @@ let texts = [
 let answers = [
 	{choices: [{msg: "Sure! 🙂", delay: 250, question: false}, {msg: "No thanks! 🙃", delay: 250, question: false}], noMessage: 'Ok! Have a nice day :)'},
 	{choices: [{msg: "Cool! What sort of stuff do you make?", delay: 250, question: false}, {msg: "Cool, thanks!", delay: 250, question: false}], noMessage: 'Yup!'},
-	{choices: [{msg: "Awesome! How do I stay in touch?", delay: 250, question: false}, {msg: "Nice!", delay: 250, question: false}], noMessage: "Thanks for asking :) feel free to send us an email at <a href='mailto:mail@automatix.xyz?Subject=Data Automatica' target='_top'>mail@automatix.xyz</a> if you have any questions!"},
+	{choices: [{msg: "Awesome! How do I stay in touch?", delay: 250, question: false}, {msg: "Nice!", delay: 250, question: false}], noMessage: "Feel free to send us an email at <a href='mailto:mail@automatix.xyz?Subject=Data Automatica' target='_top'>mail@automatix.xyz</a> if you have any questions! :)"},
 	{choices: [{msg: "💕", delay: 250, question: false}, {msg: "👍", delay: 250, question: false}], noMessage: '✌️ '}
 ]
 
