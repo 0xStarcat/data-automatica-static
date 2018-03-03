@@ -9,7 +9,7 @@ let texts = [
 	{msg: "We especially love to support grassroots organizations, researchers, and activists!", delay: 4000, question: true},
 	{msg: "Media platforms, data visualizations & scrapers, software products, you name it!", delay: 5000, question: true},
 	{msg: "You already have my number, silly! 😂", delay: 2000, question: false},
-	{msg: "You can always send us an email at <a href='mailto:jadeahking@gmail.com?Subject=Data Automatica' target='_top'>JadeAhking@gmail.com</a> though!", delay: 3000, question: false},
+	{msg: "You can always send us an email at <a href='mailto:mail@automatix.xyz?Subject=Data Automatica' target='_top'>mail@automatix.xyz</a> though!", delay: 3000, question: false},
 	{msg: "It was nice chatting with you!", delay: 3000, question: true},
 	{msg: "❤️❤️❤️", delay: 2000, question: false}
 ]
