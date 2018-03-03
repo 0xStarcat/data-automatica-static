@@ -150,7 +150,6 @@ function messageNo() {
 			let newMyMessageText = answers[0].noMessage
 			newMyMessage.innerText = ''
 			newMyMessage.innerHTML = newMyMessageText
-			newMyMessage.appendChild(newMyMessageText)
 			messageRow.appendChild(newMyMessage)
 			window.scrollTo(0,document.body.scrollHeight);
 
