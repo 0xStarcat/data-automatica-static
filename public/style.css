@@ -10,7 +10,7 @@ body {
 	background-color: #ece5dd;
 	max-width: 700px;
 	padding: 20px 6em;
-	margin: 0 auto;
+	margin: 0 auto 20px auto;
 	height: 100vh;
 	box-sizing: border-box;
 }
