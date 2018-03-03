@@ -1,0 +1,70 @@
+body {
+	background-color: #ece5dd;
+	font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+	font-size: 14px;
+	font-weight: 400;
+	margin: 0;
+}
+
+#messenger {
+	background-color: #ece5dd;
+	max-width: 660px;
+	padding: 20px 200px;
+	margin: 0 auto;
+	height: 100vh;
+	box-sizing: border-box;
+}
+
+#messages-box {
+	margin-bottom: 20px;
+}
+
+#reply-box {
+	display: flex;
+	justify-content: center;
+}
+
+#reply-box button {
+	width: 50%;
+	height: 40px;
+	font-size: 14px;
+	background-color: white;
+	border: 1px solid black;
+	border-radius: 4px;
+	margin: 0px 4px;
+}
+
+.message-row {
+	width: 100%;
+}
+
+.message {
+	border-radius: 8px;
+	padding: 6px;
+	margin: 4px 0px;
+	max-width: 380px;
+}
+
+.my-message {
+	background-color: #dcf8c6;
+	float: right;
+}
+
+.your-message {
+	background-color: white;
+	float: left;
+}
+
+.clear-float {
+	clear: both;
+}
+
+@media (max-width: 380px) {
+
+	#messenger {
+		padding: 20px;
+	}
+	.message {
+		max-width: 210px;
+	}
+}
