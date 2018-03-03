@@ -70,11 +70,18 @@ body {
 }
 
 @media (max-width: 472px) {
+	body {
+		font-size: 15px;
+	}
 
 	#messenger {
 		padding: 20px;
 	}
 	.message {
 		max-width: 15em;
+	}
+
+	#reply-box button {
+		font-size: 15px;
 	}
 }
