@@ -9,8 +9,8 @@ body {
 #messenger {
 	background-color: #ece5dd;
 	max-width: 700px;
-	padding: 20px 6em;
-	margin: 0 auto 20px auto;
+	padding: 40px 6em;
+	margin: 0 auto;
 	height: 100vh;
 	box-sizing: border-box;
 }
@@ -22,11 +22,12 @@ body {
 #reply-box {
 	display: flex;
 	justify-content: center;
+	margin-bottom: 60px;
 }
 
 #reply-box button {
 	width: 50%;
-	height: 40px;
+	height: 50px;
 	font-size: 14px;
 	background-color: white;
 	border: 1px solid black;
