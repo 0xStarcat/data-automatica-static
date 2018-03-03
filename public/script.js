@@ -17,7 +17,7 @@ let texts = [
 let answers = [
 	{choices: [{msg: "Sure! 🙂", delay: 250, question: false}, {msg: "No thanks! 🙃", delay: 250, question: false}], noMessage: 'Ok! Have a nice day :)'},
 	{choices: [{msg: "Cool! What sort of stuff do you make?", delay: 250, question: false}, {msg: "Cool, thanks!", delay: 250, question: false}], noMessage: 'Yup!'},
-	{choices: [{msg: "Sounds great! How can I stay in touch?", delay: 250, question: false}, {msg: "Nice!", delay: 250, question: false}], noMessage: 'Thanks for asking :) feel free to send us an email at <a href='mailto:mail@automatix.xyz?Subject=Data Automatica' target='_top'>mail@automatix.xyz</a> if you have any questions!'},
+	{choices: [{msg: "Sounds great! How can I stay in touch?", delay: 250, question: false}, {msg: "Nice!", delay: 250, question: false}], noMessage: "Thanks for asking :) feel free to send us an email at <a href='mailto:mail@automatix.xyz?Subject=Data Automatica' target='_top'>mail@automatix.xyz</a> if you have any questions!"},
 	{choices: [{msg: "💕", delay: 250, question: false}, {msg: "👍", delay: 250, question: false}], noMessage: '✌️ '}
 ]
 
