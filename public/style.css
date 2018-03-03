@@ -63,7 +63,7 @@ body {
 @media (max-width: 660px) {
 
 	#messenger {
-		padding: 20px;
+		padding: 40px;
 	}
 	.message {
 		max-width: 25em;
@@ -76,7 +76,7 @@ body {
 	}
 
 	#messenger {
-		padding: 20px;
+		padding: 20px 40px;
 	}
 	.message {
 		max-width: 15em;

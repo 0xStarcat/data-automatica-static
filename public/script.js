@@ -17,7 +17,7 @@ let texts = [
 let answers = [
 	{choices: [{msg: "Sure! 🙂", delay: 250, question: false}, {msg: "No thanks! 🙃", delay: 250, question: false}], noMessage: 'Ok! Have a nice day :)'},
 	{choices: [{msg: "Cool! What sort of stuff do you make?", delay: 250, question: false}, {msg: "Cool, thanks!", delay: 250, question: false}], noMessage: 'Yup!'},
-	{choices: [{msg: "Sounds great! How can I stay in touch?", delay: 250, question: false}, {msg: "Nice!", delay: 250, question: false}], noMessage: "Thanks for asking :) feel free to send us an email at <a href='mailto:mail@automatix.xyz?Subject=Data Automatica' target='_top'>mail@automatix.xyz</a> if you have any questions!"},
+	{choices: [{msg: "Awesome! How do I stay in touch?", delay: 250, question: false}, {msg: "Nice!", delay: 250, question: false}], noMessage: "Thanks for asking :) feel free to send us an email at <a href='mailto:mail@automatix.xyz?Subject=Data Automatica' target='_top'>mail@automatix.xyz</a> if you have any questions!"},
 	{choices: [{msg: "💕", delay: 250, question: false}, {msg: "👍", delay: 250, question: false}], noMessage: '✌️ '}
 ]
 
@@ -97,9 +97,9 @@ function messageYes() {
 	clearFloat.className += 'clear-float'
 	let reply = document.createElement('div')
 	reply.className = 'your-message message'
-	let replyText = document.createTextNode(answers[0].choices[0].msg)
+	let replyText = answers[0].choices[0].msg
+	reply.innerHTML = replyText
 
-	reply.appendChild(replyText)
 	messageRow.appendChild(reply)
 	messageRow.appendChild(clearFloat)
 	messageBox.appendChild(messageRow)
@@ -120,9 +120,9 @@ function messageNo() {
 	clearFloat.className += 'clear-float'
 	let reply = document.createElement('div')
 	reply.className = 'your-message message'
-	let replyText = document.createTextNode(answers[0].choices[1].msg)
+	let replyText = answers[0].choices[1].msg
+	reply.innerHTML = replyText
 
-	reply.appendChild(replyText)
 	messageRow.appendChild(reply)
 	messageRow.appendChild(clearFloat)
 	messageBox.appendChild(messageRow)
@@ -147,8 +147,9 @@ function messageNo() {
 
 	setTimeout(() => {
 
-			let newMyMessageText = document.createTextNode(answers[0].noMessage)
+			let newMyMessageText = answers[0].noMessage
 			newMyMessage.innerText = ''
+			newMyMessage.innerHTML = newMyMessageText
 			newMyMessage.appendChild(newMyMessageText)
 			messageRow.appendChild(newMyMessage)
 			window.scrollTo(0,document.body.scrollHeight);
