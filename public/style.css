@@ -8,8 +8,8 @@ body {
 
 #messenger {
 	background-color: #ece5dd;
-	max-width: 660px;
-	padding: 20px 200px;
+	max-width: 700px;
+	padding: 20px 6em;
 	margin: 0 auto;
 	height: 100vh;
 	box-sizing: border-box;
@@ -42,7 +42,7 @@ body {
 	border-radius: 8px;
 	padding: 6px;
 	margin: 4px 0px;
-	max-width: 380px;
+	max-width: 20em;
 }
 
 .my-message {
@@ -59,12 +59,22 @@ body {
 	clear: both;
 }
 
-@media (max-width: 380px) {
+@media (max-width: 660px) {
 
 	#messenger {
 		padding: 20px;
 	}
 	.message {
-		max-width: 210px;
+		max-width: 25em;
+	}
+}
+
+@media (max-width: 472px) {
+
+	#messenger {
+		padding: 20px;
+	}
+	.message {
+		max-width: 15em;
 	}
 }
