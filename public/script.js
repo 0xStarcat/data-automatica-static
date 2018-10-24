@@ -21,7 +21,7 @@ let texts = {
   ],
   "goodbye": [
     {msg: "It was nice chatting with you!", delay: 1000, question: false},
-    {msg: "❤️❤️❤️", delay: 1000, question: false}
+    {msg: "❤️❤️❤️", delay: 1000, question: false, final: true}
   ]
 }
 
@@ -59,7 +59,7 @@ let answers = [
 	{
     choices: [
       {
-        msg: "Awesome! How do I stay in touch?", delay: 250, question: false
+        msg: "How do I stay in touch?", delay: 250, question: false
       },
       {
         msg: "Nice!", delay: 250, question: false
@@ -93,7 +93,7 @@ function loadmessages(nextMessageKey) {
 }
 
 function playNextMessage() {
-  addMessageElements(textQueue[0], belongsToMe=true, continuePlay=true)
+  addMessageElements(textQueue[0], belongsToMe=true, continuePlay=!textQueue[0].final)
 	textQueue.shift()
 }
 
@@ -169,6 +169,8 @@ function addMessageElements(message, belongsToMe=true, continuePlay=true, ) {
         appendQuestions(repliesQueue[0])
       } else if (continuePlay) {
         playNextMessage()
+      } else {
+        return
       }
     }, belongsToMe ? message.delay : 0)
   }, belongsToMe ? (Math.random() * 500) + 1000 : 0)

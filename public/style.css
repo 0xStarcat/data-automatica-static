@@ -29,7 +29,7 @@ body {
 #reply-box button {
 	width: 50%;
 	height: 60px;
-	font-size: 14px;
+	font-size: 15px;
 	background-color: white;
 	border: 1px solid black;
 	border-radius: 4px;
@@ -42,7 +42,8 @@ body {
 
 .message {
 	border-radius: 8px;
-	padding: 6px;
+	padding: 8px;
+  line-height: 120%;
 	margin: 4px 0px;
 	max-width: 20em;
 }
