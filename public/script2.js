@@ -11,7 +11,7 @@ let texts = {
     {msg: "Great!!", delay: 1500, question: false},
     {msg: "Data Automatica does web application development, product research + design, and business + organizational technology consulting.", delay: 2000, question: true},
   ],
-  "pastClients": [
+  "clients": [
     {msg: "We've worked with individuals, organizations, and businesses of all shapes and sizes - from entrepeneurs, to nonprofits, startups, and larger companies.", delay: 2000, question: false},
     {msg: "If you'd like specific names or references, feel free to ask anytime!", delay: 1500, question: true}
   ],
@@ -25,66 +25,56 @@ let texts = {
   ]
 }
 
-let repliesQueue = []
-let introductionReply = {
-  choices: [
+let replies = [
+
+
+]
+
+let introductionReply = [
     {
-      msg: "Sure!", delay: 250, question: false
+      msg: "Sure!", delay: 250, question: false, nextTextKey: 'hearMore'
     },
     {
       msg: "No thanks! 🙃", delay: 250, question: false
     }
-  ],
-  nextTextKey: 'hearMore',
-  noMessage: {
-    msg: 'Ok! Have a nice day :)'
-  }
-}
+]
+
 
 let answers = [
-	{
-    choices: [
-      {
-        msg: "Cool! Who have you worked with before?", delay: 250, question: false
-      },
-      {
-        msg: "Cool, thanks!", delay: 250, question: false
-      }
-    ],
-    nextTextKey: 'pastClients',
-    noMessage: {
-      msg: 'Yup!'
+    {
+      msg: "Cool! Who have you worked with before?",
+      delay: 250,
+      question: false,
+      nextTextKey: 'clients'
+    },
+    {
+      msg: "Awesome! How do I stay in touch?",
+      delay: 250,
+      question: false,
+      nextTextKey: 'contact'
+    },
+    {
+      msg: "Let's chat another time!",
+      delay: 250,
+      question: false,
+      nextTextKey: 'anotherTime'
     }
-  },
-	{
-    choices: [
-      {
-        msg: "Awesome! How do I stay in touch?", delay: 250, question: false
-      },
-      {
-        msg: "Nice!", delay: 250, question: false
-      }
-    ],
-    nextTextKey: 'contact',
-    noMessage: {
-      msg: "Feel free to send us an email at <a href='mailto:data-automatica@protonmail.com?Subject=Data Automatica' target='_top'>data-automatica@protonmail.com</a> if you have any questions! :)"
-    }
-  },
-	{
-    choices: [
-      {
-        msg: "❤️", delay: 250, question: false
-      },
-      {
-        msg: "😜", delay: 250, question: false
-      }
-    ],
-    nextTextKey: 'goodbye',
-    noMessage: {
-      msg: '✌️ '
-    }
-  }
-]
+  ]
+	// {
+  //   choices: [
+  //     {
+  //       msg: "❤️", delay: 250, question: false
+  //     },
+  //     {
+  //       msg: "😜", delay: 250, question: false
+  //     }
+  //   ],
+  //   nextTextKey: 'goodbye',
+  //   noMessage: {
+  //     msg: '✌️ '
+  //   }
+  // }
+
 
 function loadmessages(nextMessageKey) {
   texts[nextMessageKey].forEach(message => {
@@ -98,12 +88,12 @@ function playNextMessage() {
 }
 
 function appendQuestions(replies) {
-		replies.choices.forEach((answer, i) => {
+		replies.forEach((reply, i) => {
 			let newReply = document.createElement('button')
-			let newReplyText = document.createTextNode(answer.msg)
+			let newReplyText = document.createTextNode(reply.msg)
 
 			if (i == 0) {
-				newReply.setAttribute('onclick', 'messageYes()')
+				newReply.setAttribute('onclick', 'messageYes("' + reply.nextTextKey + '")')
 
 			} else {
 				newReply.setAttribute('onclick', 'messageNo()')
@@ -115,21 +105,23 @@ function appendQuestions(replies) {
 }
 
 
-function messageYes() {
+function messageYes(nextTextKey) {
 	// Send your message
 	replyBox.innerHTML = ''
-  loadmessages(repliesQueue[0].nextTextKey)
-  addMessageElements(repliesQueue[0].choices[0], belongsToMe=false, continuePlay=true)
-  repliesQueue.shift()
+  debugger
+  reply = replies.find(choice => choice.nextTextKey === nextTextKey)
+  loadmessages(nextTextKey)
+  addMessageElements(reply.choices[0], belongsToMe=false, continuePlay=true)
+  replies.choices.filter((choice) => choice.nextTextKey !== nextTextKey)
 }
 
 function messageNo() {
 	// Send your message
 	replyBox.innerHTML = ''
-  addMessageElements(repliesQueue[0].choices[1], belongsToMe=false, continuePlay=false)
+  addMessageElements(replies[0].choices[1], belongsToMe=false, continuePlay=false)
 
 	// Send my last message
-  addMessageElements(repliesQueue[0].noMessage, belongsToMe=true, continuePlay=false)
+  addMessageElements(replies[0].noMessage, belongsToMe=true, continuePlay=false)
 }
 
 function addMessageElements(message, belongsToMe=true, continuePlay=true, ) {
@@ -161,12 +153,10 @@ function addMessageElements(message, belongsToMe=true, continuePlay=true, ) {
       window.scrollTo(0,document.body.scrollHeight);
 
       if (message.question && message.introduction) {
-        repliesQueue.push(introductionReply)
-        appendQuestions(repliesQueue[0])
+        replies = introductionReply
+        appendQuestions(replies[0])
       } else if (message.question) {
-        repliesQueue.push(answers[0])
-        answers.shift()
-        appendQuestions(repliesQueue[0])
+        appendQuestions(replies)
       } else if (continuePlay) {
         playNextMessage()
       }
