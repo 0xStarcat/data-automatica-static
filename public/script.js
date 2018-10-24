@@ -12,7 +12,7 @@ let texts = {
     {msg: "Data Automatica does web application development, product research + design, and business + organizational technology consulting.", delay: 2000, question: true},
   ],
   "pastClients": [
-    {msg: "We've worked with individuals, organizations, and businesses of all shapes and sizes - from entrepeneurs, to nonprofits, startups, and larger companies.", delay: 2000, question: false},
+    {msg: "We've worked with individuals, organizations, and businesses of all shapes and sizes - from entrepreneurs, to nonprofits, startups, and larger companies.", delay: 2000, question: false},
     {msg: "If you'd like specific names or references, feel free to ask anytime!", delay: 1500, question: true}
   ],
   "contact": [

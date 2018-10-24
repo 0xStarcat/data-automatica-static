@@ -23,7 +23,7 @@ body {
 #reply-box {
 	display: flex;
 	justify-content: center;
-	margin-bottom: 60px;
+	margin-bottom: 80px;
 }
 
 #reply-box button {
